@@ -2355,4 +2355,417 @@ void print(short a, short b, std::string sep){
 }
 ~~~
 
-Ответ:Б
+Ответ:
+<ul>
+
+<li>- [ ] <li>
+    
+~~~cpp
+void print(short a, short b, std::string sep){
+    std::cout << a << sep << b;
+}
+~~~   
+</li></li>
+
+<li>- [ ] <li>
+    
+~~~cpp
+void print(short a, short b, std::string sep);
+~~~   
+</li></li>
+
+<li>- [ ] <li>
+    
+~~~cpp
+auto print(short a, short b, std::string sep) -> void;
+~~~   
+</li></li>
+
+<li>- [ ] <li>
+    
+~~~cpp
+void print(short b, short a, std::string stop);
+~~~   
+</li></li>
+
+<li>- [ ] <li>
+    
+~~~cpp
+print(short b, short a, std::string stop);
+~~~   
+</li></li>
+
+<li>- [ ] <li>
+    
+~~~cpp
+void print(short, short, std::string);
+~~~   
+</li></li>
+
+<li>- [x] <li>
+    
+~~~cpp
+print(a, b, sep);
+~~~   
+</li></li>
+
+<li>- [ ] <li>
+    
+~~~cpp
+void print(short b, short a, std::string stop)
+~~~   
+</li></li>
+
+</ul>
+
+---
+
+Дан фрагмент кода на С++. Что отобразится на экране после его выполнения?
+~~~cpp
+int x = 5;
+if (x = 0 || 5) std::cout << 11;
+std::cout << x;
+~~~
+
+Ответ: <code> 111 </code>
+
+---
+
+Дан фрагмент кода на языке С++. Что будет на экране в результате выполнения данного фрагмента?
+~~~cpp
+class A{
+public:
+    ~A(){
+        std::cout << 'A';
+    }
+};
+
+class B{
+public:
+    ~B(){
+        std::cout << 'B';
+    }
+};
+
+class C: public A, public B{
+public:
+    ~C(){
+        std::cout << 'C';
+    }
+};
+
+C obj;
+~~~
+
+Ответ:
+- [ ] C
+- [ ] CAB
+- [ ] BAC
+- [x] CBA
+- [ ] ABC
+- [ ] Ничего
+
+---
+
+Дан фрагмент кода на С++. Что отобразится на экране после его выполнения?
+~~~cpp
+class Point{
+    Point(){}
+};
+ 
+int main(){
+    Point p;
+    std::cout << sizeof(p);
+}
+~~~
+
+Ответ:
+- [x] Ошибка. Не доступен конструктор по умолчанию
+- [ ] 1
+- [ ] 4
+- [ ] 8
+- [ ] 0
+- [ ] 2
+
+---
+
+Язык С++. Что будет напечатано в результате исполнения следующего кода?
+~~~cpp
+#include <iostream>
+
+class A{
+public:
+    void get(){
+        std::cout << 'A';
+    }
+};
+
+class B: public A{
+public:
+    void get(){
+        std::cout << 'B';
+    }
+};
+
+class C: public B{
+public:
+    void get(){
+        std::cout << 'C';
+    }
+};
+
+int main(){
+    A* obj = new C;
+    obj->get();
+}
+~~~
+
+Ответ:
+- [ ] B
+- [x] A
+- [ ] Ошибка
+- [ ] C
+
+---
+
+Дан фрагмент кода на языке С++. Что будет на экране в результате выполнения данного фрагмента?
+~~~cpp
+class A{
+public:
+    A(){
+        std::cout << 'A';
+    }
+};
+
+class B{
+public:
+    B(){
+        std::cout << 'B';
+    }
+};
+
+class C: public A, public B{
+public:
+    C(){
+        std::cout << 'C';
+    }
+};
+
+C obj;
+~~~
+
+Ответ:
+- [x] ABC
+- [ ] CBA
+- [ ] CAB
+- [ ] BAC
+- [ ] Ничего
+- [ ] C
+
+---
+
+Дан фрагмент кода на С++. Что отобразится на экране после его выполнения?
+~~~cpp
+void print(short a){
+    std::cout << a;
+}
+
+void print(int a){
+    std::cout << 2*a;
+}
+
+void print(double a){
+    std::cout << 3*a;
+}
+
+int main()
+{
+    unsigned int i = 10;
+    print(i);
+}
+~~~
+
+Ответ:
+- [x] Ошибка компиляции
+- [ ] 10
+- [ ] Ничего
+- [ ] 20
+- [ ] 30
+
+---
+
+Дан фрагмент кода на языке С++. Что будет на экране в результате выполнения данного фрагмента?
+~~~cpp
+class A{
+public:
+    int value = 1;
+    void set_value(int value){
+        this->value = value;
+    }
+};
+
+class B: public A{
+public:
+    int value = 1;
+    void set_value(int value){
+        this->value = value;
+    }
+};
+
+B obj;
+obj.set_value(5);
+std::cout << obj.value;
+~~~
+
+Ответ:
+
+- [x] 5
+- [ ] 1
+- [ ] Ошибка
+
+---
+
+Дан фрагмент кода на С++. Что будет напечатано в результате его выполнения?
+~~~cpp
+namespace D{
+    int i = 1;
+}
+
+namespace C{
+    using namespace D;
+}
+
+namespace A {
+    namespace B {
+        using namespace C;
+        void print() {
+            std::cout << i;
+        }
+    }
+    int i = 3;
+}
+
+int main() {
+    A::B::print();
+}
+~~~
+
+Ответ:
+- [ ] Ошибка
+- [ ] 3
+- [ ] 2
+- [x] 1
+
+---
+
+Дан фрагмент кода на Go. Что будет напечатано в результате выполнения фрагмента кода:.
+~~~go
+a := 5
+b := 15
+if a = 3 {
+    fmt.Print(a)
+} else {
+    fmt.Print(b)
+}
+~~~
+
+Ответ:
+- [ ] 5
+- [ ] 15
+- [x] Ошибка
+- [ ] 3
+
+---
+
+Дан фрагмент код на на языке Go. Что будет на экране в результате его выполнения:
+~~~go
+package main
+import "fmt"
+
+func print(){
+    fmt.Println(a)
+}
+
+func main(){
+    a := 10
+    print()
+}
+~~~
+
+Ответ:
+- [ ] Ошибка во время исполнения;
+- [ ] 0
+- [ ] Ошибка во время компиляции;
+- [ ] 10
+
+---
+
+Дан фрагмент кода на языке Go:
+~~~go
+var i int = 10
+var p *int = &i
+fmt.Print(*p)
+~~~
+
+Выберите все верные утверждения (нумерация строк с единицы).
+
+Ответ:
+- [x] Результат выражения *p в 3й строке - целое число
+- [x] На экране появится 10
+- [x] p - хранит адрес переменной i
+- [x] Результат выражения &i во 2й строке - адрес
+- [ ] Результат выражения *p в 3й строке - указатель на целое число
+- [ ] На экране появится адрес переменной i
+
+---
+
+Язык Go. Дан фрагмент кода:
+~~~go
+type A struct{
+    value int
+}
+
+type Printer interface{
+    print()
+}
+
+func main() {
+    var obj A
+    p := Printer(&obj)
+    p.print()
+}
+~~~
+
+Что нужно добавить, чтобы он стал рабочим?
+
+Ответ:
+- [ ] a.
+~~~go
+func print(a *A){
+    fmt.Print(a.value)
+}
+~~~
+
+ - [x] b.
+~~~go
+func (a *A) print(){
+    fmt.Print(a.value)
+}
+~~~    
+
+- [ ] c.
+Ничего. Код уже рабочий
+
+- [ ] d.
+~~~go
+func (a *A) Printer{
+    fmt.Print(a.value)
+}
+~~~
+
+- [ ] e.
+~~~go
+func Printer(a *A){
+    fmt.Print(a.value)
+}
+~~~
