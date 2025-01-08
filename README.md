@@ -5891,3 +5891,242 @@ i += 10;
 На сколько байт сдвинется указатель?
 
 Ответ: <code> 40 </code>
+
+---
+
+Язык Go. Выберите все выражения НЕ приводящие к ошибке.
+~~~go
+var i int = 10
+var k float64 = 10
+var a *int
+var b *float64
+~~~
+
+Ответ:
+- [x] a = &i;
+- [ ] a = &k;
+- [ ] b = a;
+- [ ] b = &i;
+- [x] b = &k;
+- [ ] *b = *a;
+
+---
+
+Язык С++. Дан код:
+~~~cpp
+int array[3] = {5, 1, 3};
+int* i = &array[1];
+++*i;
+std::cout << i[0];
+~~~
+
+Что будет выведено в результате?
+
+Ответ:
+- [ ] 1
+- [ ] Ошибка
+- [ ] 3
+- [x] 2
+- [ ] 5
+
+---
+
+Дан фрагмент кода на С++.
+~~~cpp
+class SomeClass{
+    int value = 0;
+public:
+    void method() const{
+        value = 1;
+        std::cout << value;
+    }
+};
+
+int main(){
+    const SomeClass s;
+    s.method();
+}
+~~~
+
+Что нужно добавить в код, чтобы код стал рабочим?
+
+Ответ:
+- [ ] Ничего добавлять не нужно. Код и так рабочий;
+- [x] Добавить ключевое слово mutable к объявлению value;
+- [ ] В константных методах нельзя менять значения полей и это изменить невозможно.
+- [ ] Добавить ключевое слово public к объявлению value;
+- [ ] Добавить ключевое слово mutable к объявлению method;
+
+---
+
+Дан фрагмент кода на С++ и класс MyClass объявленный как:
+~~~cpp
+class MyClass{};
+~~~
+
+Выберите все верные варианты, которые являются допустимыми объявлениям.
+
+Ответ:
+- [ ] MyClass operator+ (double a, double b);
+- [x] double operator+ (double a, MyClass b);
+- [x] double operator+ (MyClass a, MyClass b);
+- [ ] double operator+ (double a, double b);
+- [x] double operator+ (MyClass a, double b);
+
+---
+
+Дан фрагмент кода на C++. Какие из следующих циклов являются бесконечными?
+
+Ответ:
+- [ ] a.
+~~~cpp
+for(0;0;0);
+~~~
+- [ ] b.
+~~~cpp
+for(unsigned short i=1; i != 0; i++) cout << i;
+~~~
+- [ ] c.
+~~~cpp
+for(unsigned short i=1; i <100; ) {
+    if (i == 99) break;
+    cout << i;
+    i++;
+}
+~~~
+- [x] d.
+~~~cpp
+for(unsigned short i=1; ; i++) cout << i;
+~~~
+- [x] e.
+~~~cpp
+for(unsigned short i=1; i++; ) {
+    cout << i;
+}
+~~~
+- [x] f.
+~~~cpp
+for(unsigned short i=1; i <100; ) {
+    if (i == 99) continue;
+    cout << i;
+    i++;
+}
+~~~
+
+---
+
+Дан фрагмент кода на Go. Что будет напечатано в результате его выполнения?
+~~~go
+package main
+import "fmt"
+
+var i int = 1
+
+func main() {
+    fmt.Print(i)
+    var i int = 2;
+    {
+        fmt.Print(i)
+        var i int = 3;
+    }
+    fmt.Print(i)
+}
+~~~
+
+Ответ:
+- [ ] 121
+- [ ] 122
+- [x] Ошибка
+- [ ] 123
+- [ ] 113
+- [ ] 111
+
+---
+
+Дан фрагмент кода на С++. Что отобразится на экране после его выполнения?
+~~~cpp
+class Point{
+    char i;
+public:
+    Point(char val=0):i(val){}
+};
+ 
+int main(){
+    Point p;
+    std::cout << sizeof(p);
+}
+~~~
+
+Ответ:
+- [ ] 8
+- [ ] 4
+- [ ] 0
+- [ ] Ошибка. Отсутствует конструктор по умолчанию
+- [x] 1
+- [ ] 2
+
+---
+
+Дан фрагмент кода на языке Go. Что будет выведено в результате его работы?
+~~~go
+str := "hello, world"
+for i := range str{
+    fmt.Print(i)
+}
+~~~
+
+Ответ: <code> 0123456789101112 </code>
+
+---
+
+Язык С++. Выберите все выражения НЕ приводящие к ошибке.
+~~~cpp
+int i = 10;
+double k = 10;
+int *a;
+double *b;
+~~~
+
+Ответ:
+- [x] b = &k;
+- [x] *b = *a;
+- [ ] b = &i;
+- [x] a = &i;
+- [ ] a = &k;
+- [ ] b = a;
+
+---
+
+Язык С++. Указатель объявлен следующим образом:
+~~~cpp
+int* i;
+~~~
+
+Какие из следующих утверждений верные?
+
+Ответ:
+- [ ] a.
+~~~cpp
+vector<int> one;
+i = &one;
+~~~
+- [ ] b.
+~~~cpp
+int one[10];
+i = &one[0];
+~~~
+- [ ] c.
+~~~cpp
+int one[10];
+i = &one;
+~~~
+- [ ] d.
+~~~cpp
+int* one[10];
+i = &one[0];
+~~~
+- [ ] e.
+~~~cpp
+int one;
+i = &one;
+~~~
