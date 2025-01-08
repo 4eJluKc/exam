@@ -1838,6 +1838,14 @@ else (x > 5) std::cout << 0;
 else std::cout << 1;
 ~~~ 
 </li></li>
+
+<li>- [x] <li>
+
+~~~cpp
+if (x == 5) std::cout << x;
+else std::cout << 0;
+~~~ 
+</li></li>
 </ul>
 
 ---
@@ -3468,30 +3476,36 @@ int main() {
 
 Ответ:
 - [x] a.
+~~~go
  var a struct {
     Title     string
     Author    string
 }
+~~~
 - [ ] b.
 В Go нет анонимных структур
 
 - [ ] c.
+~~~go
 type anonymous struct {
     Title     string
     Author    string
 }
-
+~~~
 - [ ] d.
+~~~go
 type {
     Title     string
     Author    string
 }
-
+~~~
 - [ ] e.
+~~~go
 type struct {
     Title     string
     Author    string
 }
+~~~
 
 ---
 
@@ -5213,7 +5227,7 @@ void print(short a, short b, std::string sep){
 - [ ] Не более одного раза в каждой области видимости;
 - [ ] Только один раз в программе;
 - [ ] Ни одного;
-- [ ] Любое количество раз;
+- [x] Любое количество раз;
 
 ---
 
@@ -6110,12 +6124,12 @@ int* i;
 vector<int> one;
 i = &one;
 ~~~
-- [ ] b.
+- [x] b.
 ~~~cpp
 int one[10];
 i = &one[0];
 ~~~
-- [ ] c.
+- [x] c.
 ~~~cpp
 int one[10];
 i = &one;
@@ -6125,7 +6139,7 @@ i = &one;
 int* one[10];
 i = &one[0];
 ~~~
-- [ ] e.
+- [X] e.
 ~~~cpp
 int one;
 i = &one;
@@ -8048,3 +8062,24 @@ do{
 ~~~
 
 Ответ: <code> 11 </code>
+
+---
+
+Дан фрагмент кода на C++. Что будет напечатано в результате выполнения следующего фрагмента кода?
+~~~cpp
+do{
+    int i = 0;
+    i++;
+    cout << i;
+}while(i<1);
+~~~
+
+Ответ:
+- [ ] 0
+- [ ] Бесконечный цикл печатающий 0
+- [X] Ошибка компиляции
+- [ ] 1
+- [ ] 01
+- [ ] Бесконечный цикл печатающий 1
+
+---
