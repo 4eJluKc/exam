@@ -5997,7 +5997,7 @@ for(unsigned short i=1; i <100; ) {
 ~~~cpp
 for(unsigned short i=1; ; i++) cout << i;
 ~~~
-- [x] e.
+- [ ] e.
 ~~~cpp
 for(unsigned short i=1; i++; ) {
     cout << i;
